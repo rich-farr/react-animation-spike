@@ -1,14 +1,17 @@
 import React, { Component } from 'react'
+import Nav from './nav'
+import TodoList from './todoList'
 
-
-class App extends Component {
-
-  constructor (props) {
-    super(props)
-  }
+class App extends React.Component {
 
   render () {
-    return <h1>Welcome to {this.props.name}</h1>
+    return (
+      <div id="container">
+        <Nav title="React Transitions are Kool"/>
+        <TodoList/>
+        {this.props.children}
+      </div>
+    )
   }
 
 }
