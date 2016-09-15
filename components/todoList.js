@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 
+const ReactCSSTransitionGroup = require('react-addons-css-transition-group');
+
+
 class TodoList extends React.Component {
 
   render () {
