@@ -10,7 +10,7 @@ var TodoList = React.createClass({
   },
   handleAdd: function() {
     var newItems =
-    this.state.items.concat([prompt('Enter some text')]);
+    this.state.items.concat([prompt('Enter summat')]);
     this.setState({items: newItems});
   },
   handleRemove: function(i) {
@@ -28,13 +28,14 @@ var TodoList = React.createClass({
     }.bind(this));
     return (
       <div>
-      <button onClick={this.handleAdd}>Add Item</button>
-      <ReactCSSTransitionGroup
-      transitionName="example"
-      transitionEnterTimeout={5000}
-      transitionLeaveTimeout={3000}>
-      {items}
-      </ReactCSSTransitionGroup>
+        <button onClick={this.handleAdd}>Add Item</button>
+        <ReactCSSTransitionGroup
+          transitionName="example"
+          transitionAppear={false}
+          transitionEnterTimeout={5000}
+          transitionLeaveTimeout={3000}>
+          {items}
+        </ReactCSSTransitionGroup>
       </div>
     );
   }
